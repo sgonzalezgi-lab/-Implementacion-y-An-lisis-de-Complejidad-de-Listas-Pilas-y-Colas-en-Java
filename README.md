@@ -19,7 +19,7 @@ A key architectural decision in this project is the strict use of Linked Lists a
 The project includes a detailed Big O analysis of the implemented structures. By comparing the variations (with vs. without a tail pointer), the analysis demonstrates the optimization of append and dequeue operations from O(n) to O(1) in specific scenarios.
 Implemented Structures:
 
-    Linked Lists (Singly linked, evaluated with/without tail references)
+    Linked Lists (Singly linked and double linked list, evaluated with/without tail references)
 
     Stacks (LIFO behavior, utilizing popFront via linked nodes)
 
