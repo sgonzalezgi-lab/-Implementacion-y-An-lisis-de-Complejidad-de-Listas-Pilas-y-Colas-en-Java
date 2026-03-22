@@ -1,43 +1,34 @@
-Implementation and Complexity Analysis of Lists, Stacks, and Queues
-📌 Overview
+# Implementación y Análisis de Complejidad de Listas, Pilas y Colas en Java
 
-This repository contains a Java-based project focused on the implementation and algorithmic complexity analysis of fundamental data structures: Lists, Stacks, and Queues.
+Este repositorio contiene el código fuente y el análisis empírico del proyecto de estructuras de datos lineales, desarrollado para el curso de Estructuras de Datos (2026-1) de la Universidad Nacional de Colombia.
 
-The primary goal of this project is to evaluate how different structural designs impact the performance and execution time of standard operations (such as inserting, deleting, and accessing elements).
-⚙️ Implementation Details
+## 🎯 Objetivo del Proyecto
+Implementar desde cero y analizar la complejidad temporal (teórica y empírica) de las operaciones fundamentales de estructuras de datos lineales en Java. El estudio contrasta el rendimiento algorítmico teórico (notación Big-O) con pruebas de rendimiento real en la Máquina Virtual de Java (JVM).
 
-A key architectural decision in this project is the strict use of Linked Lists as the foundational building block for all data structures.
+## 🏗️ Estructuras Implementadas
 
-    No Arrays: Array-based implementations were intentionally avoided to focus purely on node-based memory allocation.
+### 1. Listas Enlazadas (`List<T>`)
+Se implementó una interfaz genérica con cuatro variaciones basadas en nodos para evaluar el impacto de los punteros adicionales en la memoria y el tiempo de ejecución:
+* **Singly Linked List (SLL):** Lista simplemente enlazada sin referencia al final.
+* **Singly Linked List con Tail (SLLT):** Lista simplemente enlazada con puntero a la cola.
+* **Doubly Linked List (DLL):** Lista doblemente enlazada sin referencia al final.
+* **Doubly Linked List con Tail (DLLT):** Lista doblemente enlazada con puntero bidireccional y referencia a la cola.
 
-    Tail Pointers: The project explores the performance differences between linked lists implemented with and without tail pointers.
+### 2. Pilas y Colas (`MyStack<T>` y `MyQueue<T>`)
+Se implementaron utilizando **Arreglos Dinámicos** como estructura subyacente para evaluar el rendimiento de bloques de memoria contiguos frente a la asignación dinámica de nodos:
+* **ArrayStack:** Implementación de pila (LIFO) con redimensionamiento dinámico y complejidad amortizada constante.
+* **ArrayQueue:** Implementación de cola (FIFO) estructurada lógicamente como un **arreglo circular** para garantizar operaciones de extracción eficientes y evitar desplazamientos lineales.
 
-    Core Operations: Methods like popFront (for Stacks) and Dequeue (for Queues) are explicitly built on top of these linked list variations to demonstrate the shift in time complexity when a tail reference is maintained.
+## 📊 Metodología de Pruebas (Análisis Empírico)
+El rendimiento empírico de cada método se evaluó realizando múltiples iteraciones incrementales (desde 10 hasta 10.000.000 de datos). 
+* **Medición:** Se utilizó `System.nanoTime()` para garantizar precisión a nivel de nanosegundos al medir operaciones de memoria a muy bajo nivel.
+* **Manejo de variables:** Las pruebas se diseñaron teniendo en cuenta el comportamiento de recolección de basura (Garbage Collector) y la compilación Just-In-Time (JIT) de Java.
 
-📊 Complexity Analysis
+## 👥 Equipo de Desarrollo (Grupo 8)
+* Sebastian Gonzalez Giraldo
+* Jerónimo Quiñones Rueda
+* Juan Diego Cardona Cortés
+* Jesus David Pinillos Rojas
 
-The project includes a detailed Big O analysis of the implemented structures. By comparing the variations (with vs. without a tail pointer), the analysis demonstrates the optimization of append and dequeue operations from O(n) to O(1) in specific scenarios.
-Implemented Structures:
-
-    Linked Lists (Singly linked and double linked list, evaluated with/without tail references)
-
-    Stacks (LIFO behavior, utilizing popFront via linked nodes)
-
-    Queues (FIFO behavior, utilizing Dequeue via linked nodes)
-
-🚀 Technologies Used
-
-    Language: Java
-
-    Concepts: Data Structures, Algorithmic Complexity, Big O Notation, Object-Oriented Programming (OOP)
-
-💻 How to Run
-
-    Clone this repository:
-    Bash
-
-    git clone [your-repository-url]
-
-    Open the project in your preferred Java IDE (Eclipse, IntelliJ, VS Code, etc.).
-
-    Compile and run the main test files to see the console outputs and performance comparisons for the different data structures.
+**Universidad Nacional de Colombia** Facultad de Ingeniería, Bogotá, Colombia  
+2026
