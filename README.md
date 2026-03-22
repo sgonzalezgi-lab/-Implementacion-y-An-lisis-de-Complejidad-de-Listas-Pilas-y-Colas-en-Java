@@ -1,4 +1,4 @@
-mplementation and Complexity Analysis of Lists, Stacks, and Queues
+Implementation and Complexity Analysis of Lists, Stacks, and Queues
 📌 Overview
 
 This repository contains a Java-based project focused on the implementation and algorithmic complexity analysis of fundamental data structures: Lists, Stacks, and Queues.
